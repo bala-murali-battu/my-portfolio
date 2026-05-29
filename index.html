@@ -1,313 +1,220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Battu Bala Murali | Student Portfolio</title>
+    <title>Murali Portfolio</title>
 
-<style>
-/* 1. Global Reset & Variables */
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-:root {
-	--primary-color: #007bff;
-	--dark-color: #1e293b;
-	--light-bg: #f8fafc;
-	--text-color: #334155;
-	--card-border: #e2e8f0;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
 
-body {
-	background-color: var(--light-bg);
-	color: var(--text-color);
-	line-height: 1.6;
-}
+        nav {
+            background-color: white;
+            padding: 15px;
+        }
 
-/* 2. Navigation Bar Layout */
-nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 20px 10%;
-	background: white;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-	position: sticky;
-	top: 0;
-	z-index: 100;
-}
+        nav h2 {
+            display: inline;
+        }
 
-.logo {
-	font-size: 24px;
-	font-weight: bold;
-	color: var(--primary-color);
-}
+        nav ul {
+            list-style: none;
+            float: right;
+        }
 
-.nav-links {
-	display: flex;
-	gap: 20px; 
-	list-style: none;
-}
+        nav ul li {
+            display: inline;
+            margin-left: 15px;
+        }
 
-.nav-links a {
-	text-decoration: none;
-	color: var(--text-color);
-	font-weight: 500;
-	transition: color 0.3s;
-}
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+        }
 
-.nav-links a:hover {
-	color: var(--primary-color);
-}
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
 
-/* 3. Hero Section (Centered using Flexbox) */
-.hero {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	min-height: 80vh; 
-	padding: 0 20px;
-	background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
-}
+        .hero h1 {
+            margin-bottom: 10px;
+        }
 
-.hero h1 {
-	font-size: 48px;
-	color: var(--dark-color);
-	margin-bottom: 10px;
-}
+        .hero p {
+            margin-bottom: 20px;
+        }
 
-.hero p {
-	font-size: 20px;
-	margin-bottom: 20px;
-}
+        .skills span {
+            display: inline-block;
+            background-color: white;
+            border: 1px solid gray;
+            padding: 5px 10px;
+            margin: 5px;
+        }
 
-/* Skills Badge Container */
-.skills-container {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 10px;
-	justify-content: center;
-	margin-bottom: 30px;
-	max-width: 600px;
-}
+        .btn {
+            display: inline-block;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+        }
 
-.skill-badge {
-	background: white;
-	border: 1px solid var(--card-border);
-	padding: 6px 14px;
-	border-radius: 20px;
-	font-size: 14px;
-	font-weight: 500;
-	color: var(--dark-color);
-	box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-}
+        section {
+            padding: 40px;
+        }
 
-.btn {
-	background-color: var(--primary-color);
-	color: white;
-	padding: 12px 24px;
-	text-decoration: none;
-	border-radius: 5px;
-	font-weight: bold;
-	transition: background 0.3s;
-}
+        h2 {
+            margin-bottom: 20px;
+        }
 
-.btn:hover {
-	background-color: #0056b3;
-}
+        .card {
+            background-color: white;
+            border: 1px solid lightgray;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
 
-/* 4. Section Grid Structure */
-.section {
-	padding: 80px 10%;
-	max-width: 1200px;
-	margin: 0 auto;
-}
+        .card h3 {
+            margin-bottom: 10px;
+        }
 
-.section-title {
-	text-align: center;
-	font-size: 32px;
-	color: var(--dark-color);
-	margin-bottom: 40px;
-}
+        .card p {
+            margin-bottom: 10px;
+        }
 
-/* 5. Projects Card Grid */
-.grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: 30px;
-}
+        form {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid lightgray;
+        }
 
-.card {
-	background: white;
-	padding: 25px;
-	border: 1px solid var(--card-border);
-	border-radius: 8px;
-	box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
+        label {
+            display: block;
+            margin-top: 10px;
+        }
 
-.card .tag {
-	align-self: flex-start;
-	font-size: 12px;
-	font-weight: bold;
-	color: var(--primary-color);
-	text-transform: uppercase;
-	letter-spacing: 0.5px;
-}
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
 
-.card h3 {
-	color: var(--dark-color);
-}
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
 
-.card .company {
-	font-weight: 500;
-	color: #64748b;
-	margin-top: -5px;
-}
-
-/* 6. Refactored Form Styles */
-.contact-container {
-	display: flex;
-	justify-content: center;
-}
-
-form {
-	background: white;
-	width: 100%;
-	max-width: 500px;
-	border: 1px solid var(--card-border);
-	padding: 30px;
-	border-radius: 8px;
-	display: flex;
-	flex-direction: column;
-	gap: 20px; 
-	box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.form-group {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-}
-
-input, textarea {
-	width: 100%;
-	padding: 10px;
-	border: 1px solid var(--card-border);
-	border-radius: 4px;
-	outline: none;
-}
-
-input:focus, textarea:focus {
-	border-color: var(--primary-color);
-}
-
-footer {
-	text-align: center;
-	padding: 30px;
-	background: var(--dark-color);
-	color: white;
-	margin-top: 40px;
-}
-</style>
+        footer {
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
 
 </head>
 
 <body>
 
-	<!-- Navigation -->
-	<nav>
-		<div class="logo">BBMurali.</div>
-		<ul class="nav-links">
-			<li><a href="#home">Home</a></li>
-			<li><a href="#experience">Experience</a></li>
-			<li><a href="#contact">Contact</a></li>
-		</ul>
-	</nav>
+    <nav>
+        <h2>Murali</h2>
 
-	<!-- Hero Section -->
-	<header id="home" class="hero">
-		<h1>Hi, I'm Battu Bala Murali</h1>
-		<p>BTech Student & Aspiring Developer</p>
-		
-		<!-- Technical Skills Badges -->
-		<div class="skills-container">
-			<span class="skill-badge">HTML / CSS</span>
-			<span class="skill-badge">JavaScript</span>
-			<span class="skill-badge">Java</span>
-			<span class="skill-badge">Python</span>
-			<span class="skill-badge">C Language</span>
-		</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-		<a href="#experience" class="btn">View My Experience</a>
-	</header>
+    <div class="hero" id="home">
+        <h1>Hello, I'm Battu Bala Murali</h1>
 
-	<!-- Experience Section (Replaced empty projects) -->
-	<section id="experience" class="section">
-		<h2 class="section-title">My Experience & Internships</h2>
-		<div class="grid">
-			
-			<!-- Internship 1 -->
-			<div class="card">
-				<span class="tag">Internship</span>
-				<h3>MERN Stack Developer</h3>
-				<p class="company">TFI Company</p>
-				<p>Gaining hands-on development experience building web applications using MongoDB, Express.js, React, and Node.js.</p>
-			</div>
+        <p>B.Tech Student and Aspiring Developer</p>
 
-			<!-- Internship 2 -->
-			<div class="card">
-				<span class="tag">Internship</span>
-				<h3>Machine Learning Intern</h3>
-				<p class="company">Winz Education</p>
-				<p>Exploring data analysis, predictive modeling techniques, and machine learning algorithms using Python core frameworks.</p>
-			</div>
+        <div class="skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Java</span>
+            <span>Python</span>
+        </div>
 
-			<!-- Academic Work / Current Portfolio -->
-			<div class="card">
-				<span class="tag" style="color: #10b981;">Personal Project</span>
-				<h3>Responsive Portfolio Site</h3>
-				<p class="company">Self-Guided Work</p>
-				<p>Designed and structured a semantic single-page personal portfolio utilizing modern CSS Flexbox and clean Grid systems.</p>
-			</div>
+        <a href="#experience" class="btn">View Experience</a>
+    </div>
 
-		</div>
-	</section>
+    <section id="experience">
 
-	<!-- Contact Section -->
-	<section id="contact" class="section">
-		<h2 class="section-title">Get In Touch</h2>
-		<div class="contact-container">
-			<form>
-				<div class="form-group">
-					<label for="name">Name</label>
-					<input id="name" name="name" type="text" placeholder="Your Name" required/>
-				</div>
-				<div class="form-group">
-					<label for="email">Email</label>
-					<input id="email" name="email" type="email" placeholder="Your Email" required/>
-				</div>
-				<div class="form-group">
-					<label for="message">Message</label>
-					<textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-				</div>
-				<button type="submit" class="btn" style="border:none; cursor:pointer;">Send Message</button>
-			</form>
-		</div>
-	</section>
+        <h2>My Experience</h2>
 
-	<!-- Footer -->
-	<footer>
-		<p>&copy; 2026 Battu Bala Murali. All Rights Reserved.</p>
-	</footer>
+        <div class="card">
+            <h3>MERN Stack Internship</h3>
+            <p><b>TFI Company</b></p>
+            <p>
+                Learning MERN Stack and creating web applications using
+                MongoDB, Express, React and Node.js.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Machine Learning Internship</h3>
+            <p><b>Winz Education</b></p>
+            <p>
+                Learning Machine Learning concepts and working on Python projects.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p><b>Personal Project</b></p>
+            <p>
+                Created my own portfolio website using HTML and CSS.
+            </p>
+        </div>
+
+    </section>
+
+    <section id="contact">
+
+        <h2>Contact Me</h2>
+
+        <form>
+
+            <label>Name</label>
+            <input type="text" placeholder="Enter your name">
+
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email">
+
+            <label>Message</label>
+            <textarea rows="5" placeholder="Enter your message"></textarea>
+
+            <button type="submit">Send Message</button>
+
+        </form>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Battu Bala Murali</p>
+    </footer>
 
 </body>
+
 </html>
